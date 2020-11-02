@@ -1,0 +1,25 @@
+1. Primitive vs. Objects
+Let's say a student writes the following line of code in a predicate method (i.e., a method
+that returns a boolean):
+
+public boolean IsNameQ() {
+String name = readLine("Enter name: ");
+return (name == "Q");
+}
+In this example comparition using == is wrong for String. Object "name" for variable "String" 
+refers to memory location. Student should have used .equals instead ==
+return (name.equals("Q"));
+
+Operator == only used with Primitive data type like int, double, char etc.
+So, in  next example using == for char will return value of that memory location
+
+The author of this code thinks that the program will return true if the player’s name is
+"Q". What’s the problem here?
+Now consider if the code were written as:
+
+public boolean IsNameQ() {
+String name = readLine("Enter name: ");
+char ch = name.charAt(0);
+return ((ch == 'Q') && (name.length() == 1));
+}
+How is the code above different with respect to checking for equality with the value "Q"?
